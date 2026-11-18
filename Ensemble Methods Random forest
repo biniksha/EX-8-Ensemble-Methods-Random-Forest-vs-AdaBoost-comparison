@@ -1,9 +1,11 @@
 AIM:
  Train RandomForest and AdaBoost classifiers on the breast cancer dataset and compare 
 accuracies.
+
 ALGORITHM :
  RandomForest = bagging many trees; AdaBoost = sequential boosting of weak learners 
 focusing on hard examples.
+
 PROGRAM:
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.datasets import load_breast_cancer
@@ -17,15 +19,19 @@ ab = AdaBoostClassifier(n_estimators=50, random_state=42).fit(Xtr,ytr)
 print('RF accuracy:', round(accuracy_score(yte, rf.predict(Xte)),4))
 print('AdaBoost accuracy:', round(accuracy_score(yte, 
 ab.predict(Xte)),4))
+
 DETAILED EXPLANATION :
 1. Load dataset and split.
 2. Train RandomForestClassifier(n_estimators=100) and 
 AdaBoostClassifier(n_estimators=50).
 3. Compare test accuracies.
+
 SAMPLE OUTPUT :
 RF accuracy: 0.9591
 AdaBoost accuracy: 0.9406
+
 RESULT:
  Students compare bagging vs boosting; performance depends on data and hyperparameters.
+
 THEORY:
  Bagging reduces variance (averaging), boosting reduces bias (sequential focus on errors).
